@@ -2,12 +2,26 @@
 //: ## Part 1: Git & GitHub
 
 // 2.
-// a. 看工作區內檔案的修改狀態
-// b. 看修改後的檔案在進入 staging area 前的前後差異
+// a. 查看 working directory 內檔案的修改狀態，以及是否被加入到 staging area 等待 commit
+// b. 查看修改後的檔案在進入 staging area 前的前後差異
 // c. 把檔案放進 staging area 等待 commit
-// d. 回到 commit 前的舊版本
+// d. 回到上一步。將被放進 staging area 的改變退回 working directory；把 commit 過後的版本往前退一個版本
 // e. 把 staging area 的檔案送進 repository，也就是儲存新版本
-// f. 看 commit 都歷史紀錄
+// f. 列出所有 commit 過的歷史紀錄
+// g. 列出 branches，以及目前在哪一支 branch
+// h. 將指定的 branch 融合至 master branch，讓 master branch 獲得該 branch 做的更動（commit）
+// i. 將 local branch repository 所做的更改送進 remote repository
+// j. 檢視已設定好的 remote repository
+// k. 複製一份該專案的副本，並拿到該這副本所有權限，讓使用者可對它進行推送
+// l. 將某一分支的 commit 移到另一分支，此時原 base 也會更換成別的 base。
+//    在想接合兩分支且想讓 commit 歷史更簡潔時可以使用
+// m. 不想把整個分支 merge 進 master 時，只挑自己想要的 commit merge 到 master
+// n. 列印出所有「歷史紀錄」的版本變化，可用於使用完 reset 回到舊版本後，想回到新版本時
+// o. 列出 git 中所有標籤、貼上標籤，通常在完成特定版本時，適合用 tag 來做註記
+
+
+// 3.
+// 先在 github 建立一個新的 repository，輸入 repository name、description，決定是否要加入 README.md 以及 license。之後在 local projects 內使用 git init 建立 repository，再使用 git remote add origin XXX(github url) 連結 local repository 到 remote repository，最後使用 git push -u origin master 將所有檔案與更改 push 到 remote repository。
 
 
 
@@ -15,7 +29,7 @@
 //: ## Part 2: Basic
 
 // 1.
-// var 用來宣告可以更改數值的變數、let 用來宣告不可以更改數值的常數
+// let 用來宣告不可以更改數值的常數、var 用來宣告可以更改數值的變數
 
 // 2.
 let pi: Double = 3.14
@@ -44,7 +58,7 @@ let bitsInBite: Int = 8
 let averageScore: Double = 86.8
 
 // 7.
-// 如果沒有指定 type，Swift 會依照 Type Inference 的規則，從 = 左邊推測右邊的變數或常數的 type
+// 如果沒有指定 type，Swift 會依照 Type Inference 的規則，從 = 左邊推測右邊變數/常數的 type
 
 // 8.
 // Hello world 為 string，而 phoneNumber 為 Int，無法指定 Int 為 String
@@ -100,7 +114,7 @@ myCountryNumber["JP"] = 81
 myCountryNumber.updateValue(0, forKey: "GB")
 
 // 12.
-var emptyDictionary: [String: Int] = [:]
+var emptyDictionary = [String: Int]()
 
 // 13.
 myCountryNumber["US"] = nil
@@ -110,8 +124,9 @@ myCountryNumber["US"] = nil
 //: ---
 //: ## Part 4: Control Flow
 
-// 1.
 let lottoNumbers = [10, 9, 8, 7, 6, 5]
+
+// 1.
 let numberLastIndex = lottoNumbers.endIndex
 for i in numberLastIndex-3..<numberLastIndex {
     print(lottoNumbers[i])
