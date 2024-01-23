@@ -44,7 +44,7 @@ let average = (x + y) / 2
 // 4.
 let averageInRecordSystem = Double(average)
 // (10 / 3) 相除完是 Int，會無條件捨去小數點
-// (10.0 / 3.0) 相除完是 Float，小數點會被保留
+// (10.0 / 3.0) 相除完是 Double，小數點會被保留
 
 // 5.
 let a = 10
